@@ -8,10 +8,14 @@ function viewAddTodoList()
 {
     echo "MENAMBAH TODO\n";
 
-    $todo = input("Todo (x untuk batal): ");
+    $todo = input("Todo (x untuk batal)");
 
     if ($todo != "x")
     {
         addTodoList($todo);
+    }
+    else
+    {
+        echo "Batal Menambah Todo\n";
     }
 }
