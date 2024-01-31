@@ -1,22 +1,21 @@
 <?php
 
-require_once "./BusinessLogic/ShowTodoList.php";
-require_once "./BusinessLogic/AddTodoList.php";
-require_once "./BusinessLogic/RemoveTodoList.php";
+require_once "./Model/TodoList.php";
 require_once "./Helper/Input.php";
+require_once "./BusinessLogic/ShowTodoList.php";
+require_once "ViewAddTodoList.php";
+require_once "ViewRemoveTodoList.php";
 
 function viewShowTodoList()
 {
     while (true)
     {
-        echo "TodoList";
-
         showTodoList();
     
         echo "MENU\n";
         echo "1. Tamabah Todo\n";
         echo "2. Hapus Todo\n";
-        echo "3. Keluar\n";
+        echo "x. Keluar\n";
     
         $pilihan = input("Pilih");
     
