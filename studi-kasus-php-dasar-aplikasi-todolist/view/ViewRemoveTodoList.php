@@ -23,7 +23,7 @@ function viewRemoveTodoList()
         }
         else
         {
-            echo "Gagal menghapus todo nomor $pilihan";
+            echo "Gagal menghapus todo nomor $pilihan\n";
         }
     
     }
