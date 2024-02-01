@@ -2,8 +2,14 @@
 
 require_once "./data/Person.php";
 
-$person = new Person();
-$person->name = "ade";
-$person->address = "berau";
+$ade = new Person();
+$ade->name = "ade";
+$ade->address = "berau";
 
-$person->sayHello("napil");
+$ade->sayHello("roger");
+
+$roger = new Person();
+$roger->name = "roger sumatra";
+$roger->address = "berau";
+
+$roger->sayHello(null);
