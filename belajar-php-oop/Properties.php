@@ -11,9 +11,9 @@ require "./data/Person.php";
  */
 
 //  Kode : Manipulasi Properties
-$person = new Person();
-$person->name = "ade";
-$person->address = "Berau";
+$person = new Person("ade", "Berau");
+// $person->name = "ade";
+// $person->address = "Berau";
 // $person->country = "Indonesia";
 
 var_dump($person);
