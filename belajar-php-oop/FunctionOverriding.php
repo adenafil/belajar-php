@@ -2,7 +2,7 @@
 
 require_once "./data/Manager.php";
 
-$manager = new Manager();
+$manager = new Manager("", "");
 $manager->name = "budiyanto";
 $manager->sayHello("mandra");
 
