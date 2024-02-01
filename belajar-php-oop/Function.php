@@ -13,3 +13,6 @@ $roger->name = "roger sumatra";
 $roger->address = "berau";
 
 $roger->sayHello(null);
+
+$roger->info();
+$ade->info();

@@ -19,4 +19,9 @@ class Person
             echo "Hello $name, my name is {$this->name}\n";
         }
     }
+
+    function info()
+    {
+        echo "STUDENT : " . self::STUDENT . PHP_EOL; 
+    }
 }
