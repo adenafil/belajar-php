@@ -14,6 +14,11 @@ class Person
         $this->address = $address;
     }
 
+    function __destruct()
+    {
+        echo "Object person {$this->name} is destroyed\n";
+    }
+
     function sayHello(?string $name): void
     {
         if (is_null($name))
