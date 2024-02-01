@@ -2,6 +2,8 @@
 
 class Person
 {
+    const STUDENT = "Ade Nafil Firmansah";
+
     var ?string $name;
     var ?string $address = null;
     var string $country = "indonesia";
