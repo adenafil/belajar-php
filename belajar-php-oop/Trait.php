@@ -11,4 +11,5 @@ $person->hello("ade");
 
 $person->name = "ade";
 
-echo $person->name;
+echo $person->name . PHP_EOL;
+$person->run();
