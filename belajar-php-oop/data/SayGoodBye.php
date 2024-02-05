@@ -56,14 +56,21 @@ class ParentPerson
 
 }
 
+trait All
+{
+    use SayGoodBye, SayHello, HasName, CanRun;
+}
+
 class Person
 {
-    use SayHello, SayGoodBye, HasName, CanRun
-    {
+    use All;
+
+    // use SayHello, SayGoodBye, HasName, CanRun
+    // {
         // bisa dioverride access modifiernya
         // hello as private;
         // goodbye as private;
-    }
+    // }
 
     public function run(): void
     {
