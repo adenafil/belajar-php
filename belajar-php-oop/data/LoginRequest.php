@@ -2,6 +2,6 @@
 
 class LoginRequest
 {
-    var string $username;
-    var string $password;
+    var ?string $username;
+    var ?string $password;
 }
