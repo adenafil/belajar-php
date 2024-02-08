@@ -18,10 +18,11 @@ namespace Repository
     class TodolistRepositoryImpl implements TodolistRepository
     {
         public array $todolist = array();
+
         #[Override]
         function save(Todolist $todolist): void
         {
-            $number = sizeof($this->todoList) + 1;
+            $number = sizeof($this->todolist) + 1;
 
             $this->todolist[$number] = $todolist;
         }

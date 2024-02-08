@@ -33,9 +33,10 @@ namespace Service
             echo  "TODOLIST\n";
             $todolist = $this->todolistRepository->findAll();
 
+
             foreach ($todolist as $number => $value)
             {
-                echo "$number. $value\n";
+                echo "$number. {$value->getTodo()}\n";
             }
         }
 

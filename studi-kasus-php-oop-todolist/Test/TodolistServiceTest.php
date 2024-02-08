@@ -6,16 +6,28 @@ require_once __DIR__ . "/../Service/TodolistService.php";
 
 use Service\TodolistServiceImpl;
 use Repository\TodolistRepositoryImpl;
+use Entity\Todolist;
 
 function testShowTodolist()
 {
     $todolistRepository = new TodolistRepositoryImpl();
-    $todolistRepository->todoList[1] = "Belajar PHP";
-    $todolistRepository->todoList[2] = "Belajar PHP OOP";
-    $todolistRepository->todoList[3] = "Belajar PHP Database";
+    $todolistRepository->todolist[1] = new Todolist("Belajar PHP");
+    $todolistRepository->todolist[2] = new Todolist("Belajar PHP OOP");
+    $todolistRepository->todolist[3] = new Todolist("Belajar PHP Database");
     $todolistService = new TodolistServiceImpl($todolistRepository);
     $todolistService->showTodolist();
 
 }
 
-testShowTodolist();
+function testAddTodolist()
+{
+    $todolistRepository = new TodolistRepositoryImpl();
+    $todolistService = new TodolistServiceImpl($todolistRepository);
+    $todolistService->addTodolist("Belajar PHP");
+    $todolistService->addTodolist("Belajar PHP OOP");
+    $todolistService->addTodolist("Belajar PHP Database");
+    $todolistService->showTodolist();
+}
+
+//testShowTodolist();
+testAddTodolist();
