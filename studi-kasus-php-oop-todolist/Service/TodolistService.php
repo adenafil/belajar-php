@@ -56,7 +56,7 @@ namespace Service
             {
                 echo "SUKSES MENGHAPUS TODOLIST\n";
             } else {
-                echo "GAGAL MENGHAPUS TODOLIST\n";c
+                echo "GAGAL MENGHAPUS TODOLIST\n";
             }
         }
     }
