@@ -3,11 +3,11 @@
 namespace Repository
 {
 
-    use Entity\TodoList;
+    use Entity\Todolist;
 
-    interface TodoListRepository
+    interface TodolistRepository
     {
-        function save(TodoList $todoList): void;
+        function save(Todolist $todolist): void;
 
         function remove(int $number): bool;
 

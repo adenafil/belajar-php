@@ -2,7 +2,7 @@
 
 namespace Entity
 {
-    class TodoList
+    class Todolist
     {
         private string $todo;
 
