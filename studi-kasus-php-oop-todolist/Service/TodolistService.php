@@ -18,9 +18,6 @@ namespace Service
     {
         private TodolistRepository $todolistRepository;
 
-        /**
-         * @param TodolistRepository $todolistRepository
-         */
         public function __construct(TodolistRepository $todolistRepository)
         {
             $this->todolistRepository = $todolistRepository;
