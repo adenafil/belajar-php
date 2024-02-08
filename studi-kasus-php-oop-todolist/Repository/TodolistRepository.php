@@ -17,11 +17,13 @@ namespace Repository
 
     class TodolistRepositoryImpl implements TodolistRepository
     {
-        public array $todoList = array();
+        public array $todolist = array();
         #[Override]
         function save(Todolist $todolist): void
         {
-            // TODO: Implement save() method.
+            $number = sizeof($this->todoList) + 1;
+
+            $this->todolist[$number] = $todolist;
         }
 
         #[Override]
@@ -34,7 +36,7 @@ namespace Repository
         #[Override]
         function findAll(): array
         {
-            return $this->todoList;
+            return $this->todolist;
         }
     }
 }

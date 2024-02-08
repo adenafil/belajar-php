@@ -2,6 +2,8 @@
 
 namespace Service
 {
+
+    use Entity\Todolist;
     use Override;
     use Repository\TodolistRepository;
 
@@ -40,7 +42,10 @@ namespace Service
         #[Override]
         function addTodolist(string $todo): void
         {
-            // TODO: Implement addTodolist() method.
+            $todoList = new Todolist($todo);
+
+            $this->todolistRepository->save($todoList);
+            echo "SUKSES MENAMBAH TODOLIST\n";
         }
 
         #[Override]
