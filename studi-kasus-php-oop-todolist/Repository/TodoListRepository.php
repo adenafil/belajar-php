@@ -7,7 +7,7 @@ namespace Repository
 
     interface TodoListRepository
     {
-        function save(TodoList): void;
+        function save(TodoList $todoList): void;
 
         function remove(int $number): bool;
 
