@@ -52,7 +52,12 @@ namespace Service
         #[Override]
         function removeTodolist(int $number)
         {
-            // TODO: Implement removeTodolist() method.
+            if ($this->todolistRepository->remove($number))
+            {
+                echo "SUKSES MENGHAPUS TODOLIST\n";
+            } else {
+                echo "GAGAL MENGHAPUS TODOLIST\n";c
+            }
         }
     }
 }
