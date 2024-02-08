@@ -72,9 +72,7 @@ namespace View
         {
             echo "MENGHAPUS TODO\n";
 
-            $pilihan = InputHelper::input("
-            Nomor (x untuk batalkan)
-            ");
+            $pilihan = InputHelper::input("Nomor (x untuk batalkan)");
             if ($pilihan == "x")
             {
                 echo "Batal menghapus todo\n";
