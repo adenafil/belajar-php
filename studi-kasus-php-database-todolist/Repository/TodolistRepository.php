@@ -18,13 +18,23 @@ namespace Repository
     class TodolistRepositoryImpl implements TodolistRepository
     {
         public array $todolist = array();
+        private \PDO $connection;
+
+        public function __construct(\PDO $connection)
+        {
+            $this->connection = $connection;
+        }
 
         #[Override]
         function save(Todolist $todolist): void
         {
-            $number = sizeof($this->todolist) + 1;
+//            $number = sizeof($this->todolist) + 1;
+//
+//            $this->todolist[$number] = $todolist;
 
-            $this->todolist[$number] = $todolist;
+            $sql = "insert into todolist(todo) values(?)";
+            $preparedStatement = $this->connection->prepare($sql);
+            $preparedStatement->execute([$todolist->getTodo()]);
         }
 
         #[Override]
