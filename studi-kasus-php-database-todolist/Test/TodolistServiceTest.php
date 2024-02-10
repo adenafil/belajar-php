@@ -12,11 +12,14 @@ use Config\Database;
 
 function testShowTodolist()
 {
-    $todolistRepository = new TodolistRepositoryImpl();
-    $todolistRepository->todolist[1] = new Todolist("Belajar PHP");
-    $todolistRepository->todolist[2] = new Todolist("Belajar PHP OOP");
-    $todolistRepository->todolist[3] = new Todolist("Belajar PHP Database");
+    $connection = Database::getConnection();
+    $todolistRepository = new TodolistRepositoryImpl($connection);
     $todolistService = new TodolistServiceImpl($todolistRepository);
+    $todolistService->addTodolist("Belajar PHP");
+    $todolistService->addTodolist("Belajar PHP OOP");
+    $todolistService->addTodolist("Belajar PHP Database");
+
+
     $todolistService->showTodolist();
 
 }
@@ -44,4 +47,4 @@ function testRemoveTodolist(): void
     echo $todolistService->removeTodolist(1) . PHP_EOL;
 }
 
-testRemoveTodolist();
+testShowTodolist();
