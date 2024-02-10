@@ -75,7 +75,23 @@ namespace Repository
         #[Override]
         function findAll(): array
         {
-            return $this->todolist;
+//            return $this->todolist;
+            $sql = "select id, todo from todolist";
+            $prepareStatement = $this->connection->prepare($sql);
+            $prepareStatement->execute();
+
+            $result = [];
+
+            foreach ($prepareStatement as $row)
+            {
+                $todolist = new Todolist();
+                $todolist->setId($row["id"]);
+                $todolist->setTodo($row["todo"]);
+                $result[] = $todolist;
+            }
+
+            return $result;
+
         }
     }
 }

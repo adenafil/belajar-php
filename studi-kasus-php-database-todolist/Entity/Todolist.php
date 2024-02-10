@@ -5,6 +5,7 @@ namespace Entity
     class Todolist
     {
         private string $todo;
+        private int $id;
 
         public function __construct(string $todo = "")
         {
@@ -19,6 +20,16 @@ namespace Entity
         public function setTodo(string $todo): void
         {
             $this->todo = $todo;
+        }
+
+        public function getId(): int
+        {
+            return $this->id;
+        }
+
+        public function setId(int $id): void
+        {
+            $this->id = $id;
         }
 
 
