@@ -41,19 +41,35 @@ namespace Repository
         function remove(int $number): bool
         {
 
-            if ($number > sizeof($this->todolist))
+//            if ($number > sizeof($this->todolist))
+//            {
+//                return false;
+//            }
+//
+//            for ($i = $number; $i < sizeof($this->todolist); $i++)
+//            {
+//                $this->todolist[$i] = $this->todolist[$i + 1];
+//            }
+//
+//            unset($this->todolist[sizeof($this->todolist)]);
+//
+//            return true;
+
+            $sql = "select id from todolist where id = ?";
+            $preparedStatement = $this->connection->prepare($sql);
+            $preparedStatement->execute([$number]);
+
+            if ($preparedStatement->fetch())
             {
+                $sql = "DELETE FROM TODOLIST WHERE ID = ?";
+                $preparedStatement = $this->connection->prepare($sql);
+                $preparedStatement->execute([$number]);
+
+                return true;
+            } else {
                 return false;
             }
 
-            for ($i = $number; $i < sizeof($this->todolist); $i++)
-            {
-                $this->todolist[$i] = $this->todolist[$i + 1];
-            }
-
-            unset($this->todolist[sizeof($this->todolist)]);
-
-            return true;
         }
 
         #[Override]
