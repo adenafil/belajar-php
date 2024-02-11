@@ -1,5 +1,5 @@
 <?php
-$say = "Hello {$_GET['name']}";
+$say = "Hello " . htmlspecialchars($_GET['name']);
 ?>
 
 <html>
