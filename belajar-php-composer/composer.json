@@ -8,5 +8,10 @@
             "email": "nafilie9@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "ProgrammerZamanNow\\": "src/"
+        }
+    },
     "require": {}
 }
