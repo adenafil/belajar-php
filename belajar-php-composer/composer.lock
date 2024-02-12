@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a054c430cff31eb1299c1162325a8276",
+    "content-hash": "68d18b3e5c514d38610ef69ad759b0f3",
     "packages": [
         {
             "name": "monolog/monolog",
@@ -112,13 +112,13 @@
             "version": "2.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/adenafil/belajar-php-composer-hello.git",
-                "reference": "efaaf13b1e50e934f46f5a7a25b84a850bd4c47b"
+                "url": "https://github.com/ProgrammerZamanNow/belajar-php-composer-hello.git",
+                "reference": "9c8d675e5bae69cdc4076cde5961fee6292635d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/adenafil/belajar-php-composer-hello/zipball/efaaf13b1e50e934f46f5a7a25b84a850bd4c47b",
-                "reference": "efaaf13b1e50e934f46f5a7a25b84a850bd4c47b",
+                "url": "https://api.github.com/repos/ProgrammerZamanNow/belajar-php-composer-hello/zipball/9c8d675e5bae69cdc4076cde5961fee6292635d0",
+                "reference": "9c8d675e5bae69cdc4076cde5961fee6292635d0",
                 "shasum": ""
             },
             "require": {
@@ -130,18 +130,19 @@
                     "ProgrammerZamanNow\\Belajar\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
-                    "name": "adenafil",
-                    "email": "nafilie9@gmail.com"
+                    "name": "Eko Kurniawan Khannedy",
+                    "email": "echo.khannedy@gmail.com"
                 }
             ],
             "description": "Library Composer Hello",
             "support": {
-                "source": "https://github.com/adenafil/belajar-php-composer-hello/tree/2.0.0",
-                "issues": "https://github.com/adenafil/belajar-php-composer-hello/issues"
+                "issues": "https://github.com/ProgrammerZamanNow/belajar-php-composer-hello/issues",
+                "source": "https://github.com/ProgrammerZamanNow/belajar-php-composer-hello/tree/2.0.0"
             },
-            "time": "2024-02-12T09:24:33+00:00"
+            "time": "2021-05-20T15:47:44+00:00"
         },
         {
             "name": "psr/log",
