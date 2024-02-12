@@ -1,0 +1,12 @@
+{
+    "name": "programmerzamannow/belajar-php-composer",
+    "description": "Belajar PHP Composer",
+    "type": "project",
+    "authors": [
+        {
+            "name": "adenafil",
+            "email": "nafilie9@gmail.com"
+        }
+    ],
+    "require": {}
+}
