@@ -13,5 +13,7 @@
             "ProgrammerZamanNow\\": "src/"
         }
     },
-    "require": {}
+    "require": {
+        "monolog/monolog": "3.5.0"
+    }
 }
