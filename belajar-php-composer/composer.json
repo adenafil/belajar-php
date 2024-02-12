@@ -21,7 +21,7 @@
     ],
     "require": {
         "php": "8.*",
-        "programmerzamannow/belajar-php-composer-hello": "1.0.0",
+        "programmerzamannow/belajar-php-composer-hello": "2.0.0",
         "monolog/monolog": "3.5.0"
     }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fc1be1a7a4ef36fd3916a271c5632d36",
+    "content-hash": "a054c430cff31eb1299c1162325a8276",
     "packages": [
         {
             "name": "monolog/monolog",
@@ -109,16 +109,16 @@
         },
         {
             "name": "programmerzamannow/belajar-php-composer-hello",
-            "version": "1.0.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/adenafil/belajar-php-composer-hello.git",
-                "reference": "c679c7116e0c0442816baf42014367bff05b30a7"
+                "reference": "efaaf13b1e50e934f46f5a7a25b84a850bd4c47b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/adenafil/belajar-php-composer-hello/zipball/c679c7116e0c0442816baf42014367bff05b30a7",
-                "reference": "c679c7116e0c0442816baf42014367bff05b30a7",
+                "url": "https://api.github.com/repos/adenafil/belajar-php-composer-hello/zipball/efaaf13b1e50e934f46f5a7a25b84a850bd4c47b",
+                "reference": "efaaf13b1e50e934f46f5a7a25b84a850bd4c47b",
                 "shasum": ""
             },
             "require": {
@@ -138,10 +138,10 @@
             ],
             "description": "Library Composer Hello",
             "support": {
-                "source": "https://github.com/adenafil/belajar-php-composer-hello/tree/1.0.0",
+                "source": "https://github.com/adenafil/belajar-php-composer-hello/tree/2.0.0",
                 "issues": "https://github.com/adenafil/belajar-php-composer-hello/issues"
             },
-            "time": "2024-02-12T08:43:48+00:00"
+            "time": "2024-02-12T09:24:33+00:00"
         },
         {
             "name": "psr/log",
