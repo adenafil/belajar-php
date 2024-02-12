@@ -13,7 +13,15 @@
             "ProgrammerZamanNow\\": "src/"
         }
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/adenafil/belajar-php-composer-hello"
+        }
+    ],
     "require": {
+        "php": "8.*",
+        "programmerzamannow/belajar-php-composer-hello": "1.0.0",
         "monolog/monolog": "3.5.0"
     }
 }
