@@ -21,7 +21,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "ProgrammerZamanNow\\Tests\\": "tests"
+            "ProgrammerZamanNow\\Test\\": "tests"
         }
     }
 }

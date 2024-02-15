@@ -21,4 +21,14 @@ class CounterTest extends TestCase
 
     }
 
+    /**
+     * @test
+     */
+    public function increment()
+    {
+        $counter = new Counter();
+        $counter->increment();
+        self::assertEquals(1, $counter->getCounter());
+    }
+
 }
