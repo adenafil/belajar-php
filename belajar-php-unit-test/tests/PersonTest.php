@@ -18,4 +18,11 @@ class PersonTest extends TestCase
         self::expectException(\Exception::class);
         $person->sayHello(null);
     }
+
+    public function testOutput()
+    {
+        $person = new Person("Ade");
+        $this->expectOutputString("Good bye Budi\n");
+        $person->sayGoodBye("Budi");
+    }
 }
