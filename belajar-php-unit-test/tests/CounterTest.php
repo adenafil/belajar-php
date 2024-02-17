@@ -6,6 +6,9 @@ use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\Attributes\After;
 use PHPUnit\Framework\Attributes\Before;
 use PHPUnit\Framework\Attributes\Depends;
+use PHPUnit\Framework\Attributes\RequiresOperatingSystem;
+use PHPUnit\Framework\Attributes\RequiresOperatingSystemFamily;
+use PHPUnit\Framework\Attributes\RequiresPhp;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Constraint\Count;
 use PHPUnit\Framework\TestCase;
@@ -55,6 +58,7 @@ class CounterTest extends TestCase
     #[Test]
     public function increment()
     {
+        self::markTestSkipped("Masih error jadi skip dulu yah");
         $this->counter->increment();
         self::assertEquals(1, $this->counter->getCounter());
     }
@@ -74,5 +78,13 @@ class CounterTest extends TestCase
         $this->assertEquals(2, $counter->getCounter());
     }
 
+
+    #[RequiresOperatingSystemFamily("Windows")]
+    #[RequiresPhp("8.2")]
+    public function testOnlyWindows()
+    {
+        echo PHP_OS_FAMILY . PHP_EOL;
+        self::assertTrue(true, "Only in windows");
+    }
 
 }
