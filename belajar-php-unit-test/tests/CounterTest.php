@@ -23,12 +23,19 @@ class CounterTest extends TestCase
     protected function tearDown(): void
     {
         echo "tear down\n";
+        // Todo not completed
     }
 
     #[After]
     public function after()
     {
         echo "after\n";
+    }
+
+    public function testIncrement()
+    {
+        self::assertEquals(0, $this->counter->getCounter());
+        self::markTestIncomplete("TODO do increment");
     }
 
     public function testCounter()
@@ -59,9 +66,7 @@ class CounterTest extends TestCase
         return $this->counter;
     }
 
-    /**
-     * @depends testFirst
-     */
+    #[Depends("testFirst")]
 
     public function testSecond(Counter $counter): void
     {
