@@ -2,6 +2,7 @@
 
 namespace ProgrammerZamanNow\Test;
 
+use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\TestCase;
 
 class ProductServiceTest extends TestCase
@@ -95,8 +96,27 @@ class ProductServiceTest extends TestCase
 
         $this->service->register($product);
 
+    }
+
+    public function testDeleteSuccess()
+    {
+        $product = new product();
+        $product->setId("1");
+
+        $this->repository->method("findById")->willReturn($product);
+
+        $this->service->delete(1);
+
+        self::assertTrue(true, "Success delete");
+    }
+
+    public function testDeleteFailed()
+    {
+        $this->expectException(\Exception::class);
+
+        $this->repository->method("findById")->willReturn(null);
 
 
-
+        $this->service->delete(1);
     }
 }

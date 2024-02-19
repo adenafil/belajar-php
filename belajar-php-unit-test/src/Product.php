@@ -2,7 +2,7 @@
 
 namespace ProgrammerZamanNow\Test;
 
-class product
+class Product
 {
     private string $id, $name, $description;
     private int $price, $quantity;

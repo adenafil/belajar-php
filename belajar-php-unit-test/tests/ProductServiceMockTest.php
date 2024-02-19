@@ -3,16 +3,17 @@
 namespace ProgrammerZamanNow\Test;
 
 use PHPUnit\Framework\Assert;
+use PHPUnit\Framework\MockObject\Rule\InvocationOrder;
 use PHPUnit\Framework\TestCase;
 
-class ProductServiceTest extends TestCase
+class ProductServiceMockTest extends TestCase
 {
     private ProductRepository $repository;
     private ProductService $service;
 
     protected function setUp(): void
     {
-        $this->repository = $this->createStub(ProductRepository::class);
+        $this->repository = $this->createMock(ProductRepository::class);
         $this->service = new ProductService($this->repository);
     }
 
@@ -117,5 +118,61 @@ class ProductServiceTest extends TestCase
         $this->repository->method("findById")->willReturn(null);
 
         $this->service->delete(1);
+    }
+
+    public function testMock()
+    {
+        $product = new Product();
+        $product->setId("1");
+
+        $this->repository->expects($this->once())
+            ->method("findById")
+            ->willReturn($product);
+
+        $result = $this->repository->findById("1");
+
+        self::assertSame($product, $result);
+    }
+
+    public function testDeleteBerhasil()
+    {
+        $product = new Product();
+        $product->setId("1");
+
+        $this->repository
+            ->expects(self::once())
+            ->method("delete")
+            ->with(self::equalTo($product));
+
+
+        $this->repository
+            ->expects(self::once())
+            ->method("findById")
+            ->with(self::equalTo($product->getId()))
+            ->willReturn($product);
+
+        $this->service->delete("1");
+
+        self::assertTrue(true, "Success Delete");
+    }
+
+    public function testDeleteGagal()
+    {
+        $this->repository->expects(self::never())
+            ->method("delete");
+
+        $product = new Product();
+        $product->setId("1");
+
+        $this->repository
+            ->expects(self::once())
+            ->method("findById")
+            ->with(self::equalTo("1"))
+            ->willReturn(null);
+
+
+        self::expectException(\Exception::class);
+        $this->service->delete("1");
+
     }
 }
