@@ -30,8 +30,11 @@ class Router
         // jika ada, cek dulu apakah di array routes memiliki path tersebut
         foreach (self::$routes as $route)
         {
+            // pattern regex
+            $pattern = "#^" . $route['path'] . "$#";
+
             // Jika ada yah masuk sini
-            if ($path == $route['path'] && $method == $route['method'])
+            if (preg_match($pattern, $path, $variables) && $method == $route['method'])
             {
 //                echo "CONTROLLER : " . $route['controller'] . ", FUNCTION : " . $route['function'];
 //                echo "</br>method : " . $route['method'] . ", path : " . $route['path'];
@@ -39,7 +42,13 @@ class Router
                 $controller = new $route['controller'];
 
                 $function = $route['function'];
-                $controller->$function();
+
+                array_shift($variables);
+
+                // ProductController->cetagories(variables[0], vairables[1]);
+//                $controller->$function($variables[0], $variables[1]);
+
+                call_user_func_array([$controller, $function], $variables);
 
                 return;
             }

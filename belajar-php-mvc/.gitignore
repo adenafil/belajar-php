@@ -5,7 +5,6 @@
 /vendor
 /nbproject
 .phpunit.result.cache
-phpunit.xml
 .vagrant
 Vagrantfile
 .idea
