@@ -9,14 +9,16 @@ class Router
     public static function add(string  $method,
                                 string $path,
                                 string $controller,
-                                string $function
+                                string $function,
+                                array $middlewares = []
                                 ): void
     {
         self::$routes[] = [
             'method' => $method,
             'path' => $path,
             'controller' => $controller,
-            'function' => $function
+            'function' => $function,
+            'middleware' => $middlewares
         ];
     }
 
@@ -38,6 +40,14 @@ class Router
             {
 //                echo "CONTROLLER : " . $route['controller'] . ", FUNCTION : " . $route['function'];
 //                echo "</br>method : " . $route['method'] . ", path : " . $route['path'];
+
+                // call middleware
+
+                foreach ($route['middleware'] as $middleware)
+                {
+                    $instance = new $middleware;
+                    $instance->before();
+                }
 
                 $controller = new $route['controller'];
 
