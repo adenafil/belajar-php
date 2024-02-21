@@ -21,4 +21,32 @@ class UserRepository
         ]);
         return $user;
     }
+
+    public function findById(string $id): ?User
+    {
+        $statement = $this->connection->prepare("select id, name, password from users where id = ?");
+        $statement->execute([$id]);
+
+        try {
+            // jika ada masuk sini, jika tidak masuk else
+            if ($row = $statement->fetch())
+            {
+                $user = new User();
+                $user->id = $row['id'];
+                $user->name = $row['name'];
+                $user->password = $row['password'];
+
+                return $user;
+            } else {
+                return null;
+            }
+        } finally {
+            $statement->closeCursor();
+        }
+    }
+
+    public function deleteAll(): void
+    {
+        $this->connection->exec("Delete from users");
+    }
 }
