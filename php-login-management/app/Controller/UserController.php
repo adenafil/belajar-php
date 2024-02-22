@@ -48,7 +48,7 @@ class UserController
         }
     }
 
-    public function login()
+    public function login(): void
     {
         View::render('User/login', [
             "title" => "Login user"

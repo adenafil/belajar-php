@@ -86,7 +86,7 @@ class UserService
             trim($request->id) == "" ||
             trim($request->password) == ""
         ) {
-            throw new ValidationException("Id, Password can not not blank or null");
+            throw new ValidationException("Id, Password can not not be blank or null");
         }
 
     }
