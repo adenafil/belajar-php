@@ -49,7 +49,7 @@ class SessionRepository
         $statement = $this->connection->prepare("
             delete from sessions where id = ?
         ");
-        $statement->execute($id);
+        $statement->execute([$id]);
     }
 
     public function deleteAll(): void
