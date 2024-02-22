@@ -3,6 +3,7 @@
 namespace ProgrammerZamanNow\Belajar\PHP\MVC\Repository;
 
 use ProgrammerZamanNow\Belajar\PHP\MVC\Config\Database;
+use ProgrammerZamanNow\Belajar\PHP\MVC\Domain\Session;
 
 class SessionRepository
 {

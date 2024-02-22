@@ -4,6 +4,7 @@ namespace ProgrammerZamanNow\Belajar\PHP\MVC\Repository;
 
 use PHPUnit\Framework\TestCase;
 use ProgrammerZamanNow\Belajar\PHP\MVC\Config\Database;
+use ProgrammerZamanNow\Belajar\PHP\MVC\Domain\Session;
 
 class SessionRepositoryTest extends TestCase
 {
