@@ -44,7 +44,7 @@ class SessionService
     {
         $sessionId = $_COOKIE[self::$COOKIE_NAME] ?? "";
         $session = $this->sessionRepository->findById($sessionId);
-        if ($session != null)
+        if ($session == null)
         {
             return null;
         }
