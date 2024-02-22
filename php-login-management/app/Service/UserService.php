@@ -60,9 +60,9 @@ class UserService
         }
     }
 
-    public function Login(UserLoginRequest $request): UserLoginResponse
+    public function login(UserLoginRequest $request): UserLoginResponse
     {
-        validateUserLoginRequest($request);
+        $this->validateUserLoginRequest($request);
 
         $user = $this->userRepository->findById($request->id);
 
