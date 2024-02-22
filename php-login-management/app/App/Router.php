@@ -24,6 +24,7 @@ class Router
 
     public static function run(): void
     {
+        // default valuenya
         $path = "/";
         // Mengecek apakah di web nya ada path info
         if (isset($_SERVER['PATH_INFO'])) $path = $_SERVER['PATH_INFO'];
@@ -38,9 +39,6 @@ class Router
             // Jika ada yah masuk sini
             if (preg_match($pattern, $path, $variables) && $method == $route['method'])
             {
-//                echo "CONTROLLER : " . $route['controller'] . ", FUNCTION : " . $route['function'];
-//                echo "</br>method : " . $route['method'] . ", path : " . $route['path'];
-
                 // call middleware
 
                 foreach ($route['middleware'] as $middleware)
