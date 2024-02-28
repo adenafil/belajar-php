@@ -5,23 +5,35 @@ namespace ProgrammerZamanNow\Belajar\PHP\MVC\App {
     {
         echo $value;
     }
+}
 
+namespace ProgrammerZamanNow\Belajar\PHP\MVC\Service {
+    function setcookie(string $name, string $value)
+    {
+        echo "$name: $value";
+    }
 }
 
 namespace ProgrammerZamanNow\Belajar\PHP\MVC\Controller {
     use PHPUnit\Framework\TestCase;
     use ProgrammerZamanNow\Belajar\PHP\MVC\Config\Database;
     use ProgrammerZamanNow\Belajar\PHP\MVC\Domain\User;
+    use ProgrammerZamanNow\Belajar\PHP\MVC\Repository\SessionRepository;
     use ProgrammerZamanNow\Belajar\PHP\MVC\Repository\UserRepository;
 
     class UserControllerTest extends TestCase
     {
         private UserController $userController;
         private UserRepository $userRepository;
+        private SessionRepository $sessionRepository;
 
         protected function setUp(): void
         {
             $this->userController = new UserController();
+
+            $this->sessionRepository = new SessionRepository(Database::getConnection());
+            $this->sessionRepository->deleteAll();
+
             $this->userRepository = new UserRepository(Database::getConnection());
             $this->userRepository->deleteAll();
 
@@ -105,7 +117,7 @@ namespace ProgrammerZamanNow\Belajar\PHP\MVC\Controller {
         {
             $user = new User();
             $user->id = 'ade';
-            $user->password = password_verify("rahasia", PASSWORD_BCRYPT);
+            $user->password = password_hash("rahasia", PASSWORD_BCRYPT);
             $user->name = 'Ade';
 
             $this->userRepository->save($user);
@@ -118,6 +130,7 @@ namespace ProgrammerZamanNow\Belajar\PHP\MVC\Controller {
             $this->expectOutputRegex("[Location: /]");
             $this->expectOutputRegex("[Id]");
             $this->expectOutputRegex("[Password]");
+            $this->expectOutputRegex("[X-PZN-SESSION: ]");
         }
 
         public function testLoginValidationError()
