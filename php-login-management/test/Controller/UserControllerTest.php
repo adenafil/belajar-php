@@ -204,8 +204,83 @@ namespace ProgrammerZamanNow\Belajar\PHP\MVC\Controller {
             $this->expectOutputRegex('[Location: /]');
             $this->expectOutputRegex('[X-PZN-SESSION: ]');
         }
+
+        public function testUpdateProfil()
+        {
+            $user = new User();
+            $user->id = 'ade';
+            $user->password = password_hash("rahasia", PASSWORD_BCRYPT);
+            $user->name = 'Ade';
+
+            $this->userRepository->save($user);
+
+            $session = new Session();
+            $session->id = uniqid();
+            $session->userId = $user->id;
+            $this->sessionRepository->save($session);
+
+            $_COOKIE[SessionService::$COOKIE_NAME] = $session->id;
+
+            $this->userController->updateProfile();
+
+            $this->expectOutputRegex('[Profile]');
+            $this->expectOutputRegex('[Id]');
+            $this->expectOutputRegex('[ade]');
+            $this->expectOutputRegex('[Name]');
+            $this->expectOutputRegex('[Ade]');
+        }
+
+        public function testPostUpdateProfilSuccess()
+        {
+            $user = new User();
+            $user->id = 'ade';
+            $user->password = password_hash("rahasia", PASSWORD_BCRYPT);
+            $user->name = 'Ade';
+
+            $this->userRepository->save($user);
+
+            $session = new Session();
+            $session->id = uniqid();
+            $session->userId = $user->id;
+            $this->sessionRepository->save($session);
+
+            $_COOKIE[SessionService::$COOKIE_NAME] = $session->id;
+
+            $_POST['name'] = 'Nafil';
+            $this->userController->postUpdateProfile();
+
+            $this->expectOutputRegex('[Location: /]');
+
+            $result = $this->userRepository->findById("$user->id");
+            self::assertEquals("Nafil", $result->name);
+        }
+
+        public function testPostUpdateProfilValidationError()
+        {
+            $user = new User();
+            $user->id = 'ade';
+            $user->password = password_hash("rahasia", PASSWORD_BCRYPT);
+            $user->name = 'Ade';
+
+            $this->userRepository->save($user);
+
+            $session = new Session();
+            $session->id = uniqid();
+            $session->userId = $user->id;
+            $this->sessionRepository->save($session);
+
+            $_COOKIE[SessionService::$COOKIE_NAME] = $session->id;
+
+            $_POST['name'] = '';
+            $this->userController->postUpdateProfile();
+
+            $this->expectOutputRegex('[Profile]');
+            $this->expectOutputRegex('[Id]');
+            $this->expectOutputRegex('[ade]');
+            $this->expectOutputRegex('[Name]');
+            $this->expectOutputRegex('[Id, Name can not be blank]');
+
+        }
     }
-
-
 }
 
