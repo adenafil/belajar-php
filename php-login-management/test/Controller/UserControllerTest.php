@@ -166,13 +166,13 @@ namespace ProgrammerZamanNow\Belajar\PHP\MVC\Controller {
         {
             $user = new User();
             $user->id = 'ade';
-            $user->password = password_verify("rahasia", PASSWORD_BCRYPT);
+            $user->password = password_hash("rahasia", PASSWORD_BCRYPT);
             $user->name = 'Ade';
 
             $this->userRepository->save($user);
 
             $_POST['id'] = 'ade';
-            $_POST['password'] = 'rahasia';
+            $_POST['password'] = 'salah';
 
             $this->userController->postLogin();
 
@@ -187,7 +187,7 @@ namespace ProgrammerZamanNow\Belajar\PHP\MVC\Controller {
         {
             $user = new User();
             $user->id = 'ade';
-            $user->password = password_verify("rahasia", PASSWORD_BCRYPT);
+            $user->password = password_hash("rahasia", PASSWORD_BCRYPT);
             $user->name = 'Ade';
 
             $this->userRepository->save($user);

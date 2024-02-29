@@ -33,7 +33,7 @@ class Router
         // jika ada, cek dulu apakah di array routes memiliki path tersebut
         foreach (self::$routes as $route)
         {
-            // pattern regex
+            // pattern regex yang mana pola regexnya berada pada folder public/index.php
             $pattern = "#^" . $route['path'] . "$#";
 
             // Jika ada yah masuk sini
@@ -54,7 +54,8 @@ class Router
                 array_shift($variables);
 
                 // ProductController->cetagories(variables[0], vairables[1]);
-//                $controller->$function($variables[0], $variables[1]);
+                // $controller->$function($variables[0], $variables[1]);
+
 
                 call_user_func_array([$controller, $function], $variables);
 
