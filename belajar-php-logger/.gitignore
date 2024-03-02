@@ -1,0 +1,12 @@
+/.settings
+/.project
+/.buildpath
+/composer.phar
+/vendor
+/nbproject
+.phpunit.result.cache
+.vagrant
+Vagrantfile
+.idea
+.vscode
+.php-cs-fixer.cache
