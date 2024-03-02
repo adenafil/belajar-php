@@ -1,0 +1,18 @@
+{
+  "message": "Belajar PHP Logging",
+  "context": {
+    "username": "ade"
+  },
+  "level": 200,
+  "level_name": "INFO",
+  "channel": "ProgrammerZamanNow\\Belajar\\PHP\\MVC\\FormatterTest",
+  "datetime": "2024-03-02T18:37:04.070823+07:00",
+  "extra": {
+    "memory_usage": "6 MB",
+    "hostname": "ade",
+    "git": {
+      "branch": "main",
+      "commit": "553a1827eece4d7cc6bc89504127b9f313cacc16"
+    }
+  }
+}
