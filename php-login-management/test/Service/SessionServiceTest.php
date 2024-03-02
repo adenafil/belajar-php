@@ -8,11 +8,7 @@ use ProgrammerZamanNow\Belajar\PHP\MVC\Domain\Session;
 use ProgrammerZamanNow\Belajar\PHP\MVC\Domain\User;
 use ProgrammerZamanNow\Belajar\PHP\MVC\Repository\SessionRepository;
 use ProgrammerZamanNow\Belajar\PHP\MVC\Repository\UserRepository;
-
-function setCookie(string $name, string $value)
-{
-    echo "$name: $value";
-}
+require_once __DIR__ . '/../Helper/helper.php';
 
 class SessionServiceTest extends TestCase
 {
