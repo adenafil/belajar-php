@@ -15,7 +15,7 @@ $product = new Product();
 
 var_dump($product);
 
-function sayHelloNew(Customer $customer = new Customer("0", "Anonymous", Gender::Male))
+function sayHelloNew(Customer $customer = new Customer("0", "Anonymous", Gender::Male)): Customer
 {
     return $customer;
 }
